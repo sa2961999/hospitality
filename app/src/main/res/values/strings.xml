@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">hospital</string>
+    <string name="address">address</string>
+    <string name="mobile">mobile</string>
+    <string name="password">password</string>
+    <string name="register">register</string>
+    <string name="first_name">first name</string>
+    <string name="todo">TODO</string>
+    <string name="last_name">last name</string>
+    <string name="sign_in">sign in</string>
+</resources>
