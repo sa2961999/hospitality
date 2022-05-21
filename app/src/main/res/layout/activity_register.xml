@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".register"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".ActivityRegister">
 
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="331dp"
         android:layout_height="217dp"
-        android:src="@drawable/doctor"
+        android:layout_margin="10dp"
         android:contentDescription="@string/todo"
-        android:layout_margin="10dp"/>
+        android:src="@drawable/doctor" />
 
     <EditText
         android:id="@+id/etfname"
@@ -39,9 +39,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:autofillHints=""
-        android:hint="@string/mobile"
-        android:inputType="phone" />
+        android:hint="@string/address"
+        android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/etaddress"
@@ -49,17 +48,17 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:autofillHints=""
-        android:hint="@string/address"
-        android:inputType="text" />
+        android:hint="@string/mobile"
+        android:inputType="number" />
 
     <EditText
         android:id="@+id/etpassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:autofillHints=""
         android:hint="@string/password"
-        android:inputType="numberPassword"
-        android:layout_margin="10dp"/>
+        android:inputType="numberPassword" />
 
     <Button
         android:id="@+id/bregister"

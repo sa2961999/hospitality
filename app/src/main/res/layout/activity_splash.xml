@@ -11,16 +11,13 @@
         android:id="@+id/splash_screen"
         android:layout_width="307dp"
         android:layout_height="266dp"
-        android:layout_marginLeft="28dp"
-        android:background="#FFFFFF"
+        android:layout_marginStart="28dp"
         android:src="@drawable/doctor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.153"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.2"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.2" />
 
     <TextView
         android:layout_width="294dp"
@@ -29,6 +26,7 @@
         android:gravity="center"
         android:text="Welcome To Hospitality"
         android:textAlignment="center"
+
         android:textColor="#2196F3"
         android:textColorLink="#336893"
         android:textSize="30sp"
