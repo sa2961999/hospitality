@@ -1,11 +1,16 @@
 <resources>
     <string name="app_name">hospital</string>
-    <string name="address">address</string>
+    <string name="address">E-mail</string>
     <string name="mobile">mobile</string>
     <string name="password">password</string>
     <string name="register">register</string>
     <string name="first_name">first name</string>
     <string name="todo">TODO</string>
     <string name="last_name">last name</string>
-    <string name="sign_in">sign in</string>
+    <string name="sign_in">sign in</string>\
+    <string name="about_where">where we are today? \n \n our project is still under development we will increase our services .</string>
+    <string name="about_what">what is hospital?</string>
+    <string name="about_the_start">the start of story</string>
+    <string name="about_article">The hospital is a medical application \n whose purpose is to help sick people. \n We have three departments: radiology, \n and intensive care.,</string>
+    <string name="title_activity_maps">MapsActivity</string>
 </resources>
