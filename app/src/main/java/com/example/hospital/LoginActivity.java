@@ -1,12 +1,15 @@
 package com.example.hospital;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
+
 import com.example.hospital.databinding.ActivityLoginBinding;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
+
 import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity {
@@ -21,6 +24,7 @@ public class LoginActivity extends AppCompatActivity {
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
 
         setContentView(binding.getRoot());
+        //make instance of firebaseAuth
         auth = FirebaseAuth.getInstance();
 
         binding.btnLogin.setOnClickListener(v -> {
@@ -32,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(LoginActivity.this, "please fill all fields", Toast.LENGTH_LONG).show();
                 return;
             }
-
+//make signin with firebase using email and password
             auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, task -> {
                 if (task.isSuccessful()) {
                     startActivity(new Intent(LoginActivity.this, HomeActivity.class));
@@ -45,6 +49,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         binding.tvNewAccount.setOnClickListener(v -> {
+            //going to RegisterActivity
             Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
             startActivity(intent);
         });

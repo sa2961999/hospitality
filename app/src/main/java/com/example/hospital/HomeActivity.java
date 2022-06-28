@@ -11,15 +11,18 @@ import android.view.View;
 import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+
 import com.example.hospital.databinding.ActivityHomeBinding;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
 import java.util.Calendar;
 import java.util.HashMap;
 
@@ -36,7 +39,9 @@ public class HomeActivity extends AppCompatActivity implements CurrentLocationPi
 
         setContentView(binding.getRoot());
 
+        //when click on ambulance image
         binding.ivAmbulance.setOnClickListener(v -> {
+            //making permission to access the location
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 ActivityCompat.requestPermissions(
                         HomeActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION,
@@ -47,13 +52,17 @@ public class HomeActivity extends AppCompatActivity implements CurrentLocationPi
             new CurrentLocationPicker(HomeActivity.this, this);
         });
 
+        //when click on ray image the program will go to RaysActivity
         binding.ivXray.setOnClickListener(view -> startActivity(new Intent(HomeActivity.this, RaysActivity.class)));
 
+        //When click on IntensiveCare image the datePickerDialog will appear
         binding.ivInensiveCare.setOnClickListener(view -> showDatePickerDialog());
 
+        //when click on about image the program will go to aboutActivity
         binding.ivAbout.setOnClickListener(view -> startActivity(new Intent(HomeActivity.this, AboutActivity.class)));
     }
 
+    //Showing DatePickerDialog
     public void showDatePickerDialog() {
         DatePickerDialog datePickerDialog = new DatePickerDialog(
                 this,
@@ -64,6 +73,7 @@ public class HomeActivity extends AppCompatActivity implements CurrentLocationPi
         datePickerDialog.show();
     }
 
+    //putting the location on realtime Database
     private void sendLocation(Double latitude, Double longitude) {
         DatabaseReference database = FirebaseDatabase.getInstance().getReference();
         database.child("ambulance").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -90,6 +100,7 @@ public class HomeActivity extends AppCompatActivity implements CurrentLocationPi
         });
     }
 
+    //putting the date that the user choice on DataPickerDialog
     private void sendDate(int year, int month, int day) {
         DatabaseReference database = FirebaseDatabase.getInstance().getReference();
         database.child("Intensive Care").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -116,6 +127,7 @@ public class HomeActivity extends AppCompatActivity implements CurrentLocationPi
         });
     }
 
+    //Making Toast with specific design
     private void printMessage(String message) {
         TextView tvMessage;
         LayoutInflater inflater = (LayoutInflater) getSystemService(HomeActivity.LAYOUT_INFLATER_SERVICE);
