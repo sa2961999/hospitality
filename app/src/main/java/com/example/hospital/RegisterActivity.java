@@ -1,15 +1,18 @@
 package com.example.hospital;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import com.example.hospital.databinding.ActivityRegisterBinding;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.Objects;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -37,6 +40,7 @@ public class RegisterActivity extends AppCompatActivity {
         });
 
         binding.tvsignin.setOnClickListener(v -> {
+            //Going to LoginActivity
             Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
             startActivity(intent);
         });
@@ -58,6 +62,7 @@ public class RegisterActivity extends AppCompatActivity {
             Toast.makeText(RegisterActivity.this, "please fill all fields", Toast.LENGTH_LONG).show();
             return;
         }
+        //Making Register with email and password and put the data of the user in realtimeDatabase
         Auth.createUserWithEmailAndPassword(mobile, password)
                 .addOnCompleteListener(RegisterActivity.this, task -> {
                     if (task.isSuccessful()) {

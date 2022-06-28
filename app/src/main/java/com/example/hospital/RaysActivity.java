@@ -46,6 +46,7 @@ public class RaysActivity extends AppCompatActivity implements DatePickerDialog.
 
     }
 
+    //Showing DatePickerDialog
     public void showDatePickerDialog() {
         DatePickerDialog datePickerDialog = new DatePickerDialog(
                 this,
@@ -56,9 +57,9 @@ public class RaysActivity extends AppCompatActivity implements DatePickerDialog.
         datePickerDialog.show();
     }
 
+    //Putting the date that the user choice on DatePickerDialog on RealtimeDatabase
     private void sendDate(int year, int month, int day) {
         DatabaseReference database = FirebaseDatabase.getInstance().getReference();
-
         database.child("Rays").child(TYPE).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
